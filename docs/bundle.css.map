@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../src/Player.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  export let name;\n  export let points;\n  let showControls = false;\n\n  const addPoints = () => (points += 1);\n  const removePoints = () => (points -= 1);\n  const toggleControls = () => (showControls = !showControls);\n</script>\n\n<style>\n  h1 {\n    color: #204f6e;\n  }\n</style>\n\n<div class=\"card\">\n  <h1>\n     {name}\n    <button class=\"btn btn-sm\" on:click={toggleControls}>\n      {#if showControls}-{:else}+{/if}\n    </button>\n  </h1>\n  <h3>points: {points}</h3>\n  {#if showControls}\n    <button class=\"btn\" on:click={addPoints}>+1</button>\n    <button class=\"btn btn-dark\" on:click={removePoints}>-1</button>\n    <input type=\"number\" bind:value={points} />\n  {/if}\n</div>\n"
+  ],
+  "names": [],
+  "mappings": "AAWE,EAAE,eAAC,CAAC,AACF,KAAK,CAAE,OAAO,AAChB,CAAC"
+}
